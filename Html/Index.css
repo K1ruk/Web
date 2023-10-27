@@ -1,45 +1,128 @@
+*{box-sizing: border-box;}
+
 body{
+    background-color: black;
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
-    background-color: grey;
-    overflow: hidden;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    border-bottom: thin solid orange;
+    user-select: none;
 }
-header nav img{
-    display: block;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    max-width: 80%;
-    max-height: 80%;
-}
-nav i a{
+
+#logo{
     float: left;
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
+
 #nav-right a{
     text-decoration: none;
-    color: green;
+    color: orange;
     margin: 10px;
     float: right;
-    padding: 14px 16px;
+    padding: 24px 16px;
+    font-size: 20px;
 }
-section{
+
+#nav-right a:hover{
+    color: #f2f2f2;
+    transition-duration: 0.4s;
+}
+
+main{
+    flex-grow: 1;
+}
+main section{    
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
 }
-section article #Roundbanner{
-    max-width: 100%;
-    max-height: 100%;
+
+main section h1{
+    color: #f2f2f2;
+    overflow: hidden;
+    border-right: thick solid orange;
+    margin: 0 auto;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    font-size: 100px;
+    cursor: default;
+    user-select: none;
+    position: relative;
+    filter: drop-shadow(0 5px 0.75rem orange);
+    animation: 
+    typing 0.75s steps(8, end),
+    blink-caret 1.5s step-end infinite,
+    floatBubble 2s infinite normal ease-out;
 }
-footer{
-    width: 100%;
-    background-color: black;
-    position: fixed;
+
+@keyframes typing{
+    from {width: 0 }
+    to {width: 100% }
+}
+@keyframes blink-caret{
+    from, to {border-color:transparent }
+    50%{border-color: orange }
+}
+@keyframes floatBubble {
+    0% {
+      top: 50%; /* Start at 50% */
+    }
+    100% {
+      top: 10%; /* Move up to 10% at the end of the animation */
+    }
+  }
+footer{    
+    border-top: thin solid orange;
+    width: 100%;    
     bottom: 0;
+    left: 0;
+    background-color: black;    
+    color: orange;
+    
 }
+#left{
+    margin: 14px 16px;
+    float: left;
+    width: 50vw;
+}
+#left b{
+    font-size: 20px;
+}
+#left p{
+    color: white;
+}
+#right{
+    display: flex;
+    flex-direction: column;
+    margin: 14px 16px;
+    
+}
+#right b{
+    font-size: 20px;
+}
+#right a{
+    text-decoration: underline;
+    color:aliceblue;
+    margin-top:16px;
+    float: right;
+}
+
