@@ -1,0 +1,122 @@
+body{
+    background-color: wheat;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: black;
+    border-bottom: thin solid orange;
+    user-select: none;
+}
+
+#logo{
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    margin-left: 10px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+#nav-right a{
+    text-decoration: none;
+    color: orange;
+    margin: 10px;
+    float: right;
+    padding: 24px 16px;
+    font-size: 20px;
+}
+
+#nav-right a:hover{
+    color: #f2f2f2;
+    transition-duration: 0.4s;
+}
+
+main{
+    flex-grow: 1;
+}
+/* main table{   
+    color: #f2f2f2; 
+    width: 100%;
+    border-collapse: separate; 
+    border-spacing: 5em;
+}
+table td{
+    border: thin solid orange;
+}
+table tbody{
+    height: 100vh;
+}
+#image1{
+    max-width: 5%;
+    max-height: 5%;
+} */
+
+.image-list {
+    list-style: none;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  
+  .image {
+    flex: 1;
+    width: 500px !important; /* Set a fixed width for all images */
+    height: 500px !important; /* Set a fixed height for all images */
+    margin: 10px;
+    text-align: center; /* Center the image within each list item */
+    border: thin solid orange; /* Add an orange border */
+    padding: 5px; /* Add padding for spacing between the image and the border */
+  }
+  .image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    width: 100%; /* Ensure images are scaled to fill the fixed width */
+    height: 100%; /* Ensure images are scaled to fill the fixed height */
+  }
+footer{    
+    border-top: thin solid orange;
+    width: 100%;    
+    bottom: 0;
+    left: 0;
+    background-color: black;    
+    color: orange;
+    
+}
+#left{
+    margin: 14px 16px;
+    float: left;
+    width: 50vw;
+}
+#left b{
+    font-size: 20px;
+}
+#left p{
+    color: white;
+}
+#right{
+    display: flex;
+    flex-direction: column;
+    margin: 14px 16px;
+    
+}
+#right b{
+    font-size: 20px;
+}
+#right a{
+    text-decoration: underline;
+    color:aliceblue;
+    margin-top:16px;
+    float: right;
+}
