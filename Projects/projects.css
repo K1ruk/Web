@@ -5,7 +5,6 @@ body {
     background-color: #edede9;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 10vh 80vh 10vh;
     grid-template-areas: 
     "header header header header"
     "main main main main"
@@ -102,6 +101,7 @@ footer {
     grid-area: footer;
     padding-top: 2vh;
     padding-left: 1vw;
+    bottom: 0;
 }
 
 #right a{
@@ -109,4 +109,8 @@ footer {
     color:aliceblue;
     margin-top: 5px;
     display: block;
+}
+@media screen and (min-width: 1440px) {
+    header{grid-template-columns: 1fr 1fr 0.5fr 1.5fr;}
+    main{grid-template-columns: repeat(4, 1fr);}
 }
