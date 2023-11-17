@@ -4,38 +4,29 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 10vh 80vh 10vh;
-    grid-template-areas: 
-    "header header header header"
-    "main main main main"
-    "footer footer footer footer";
-    min-height: 100vh;
     font-size: 17px;
-
-    background-image: url(Anne1.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    height: 100%;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
 }
-
-header {
-    grid-area: header;
+.grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "div . . nav";
+    grid-template-columns: repeat(12, 1fr);
+}
+header {
     background-color: #03071e;
     color: #fff;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
 }
 
-#logo{
-    grid-area: div;
+header #logo{
+    grid-column: span 6;
+}
+header nav{
+    grid-column: span 6;
+    justify-self: end;
 }
 button{
     background-image: linear-gradient(140deg, #F09E16 0%, #f2295b 100%);
@@ -47,15 +38,12 @@ button{
     height: 4vh;
     font-size: 17px;
 }
+
 button:hover{
     text-decoration: none;
     transform: rotate(2deg);
     transition: 100ms linear all;
     font-size: 18px;
-}
-nav {
-    grid-area: nav;
-    margin-left: auto;
 }
 
 nav a {
@@ -71,10 +59,6 @@ nav a:hover{
     transition-duration: 0.4s;
 }
 
-
-main{
-    flex-grow: 1;
-}
 main section{    
     margin: 0;
     position: absolute;
@@ -85,17 +69,15 @@ main section{
 }
 
 main section h1{
-
     background: -webkit-linear-gradient(317deg, rgba(240,158,22,1) 0%, rgba(242,41,91,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     overflow: hidden;
     border-right: thick solid orange;
     margin: 0 auto;
     white-space: nowrap;
     letter-spacing: 1px;
-    font-size: 100px;
+    font-size: 10vw;
     cursor: default;
     user-select: none;
     position: relative;
@@ -109,10 +91,12 @@ main section h1{
     from {width: 0 }
     to {width: 100% }
 }
+
 @keyframes blink-caret{
     from, to {border-color:transparent }
     50%{border-color: orange }
 }
+
 @keyframes floatBubble {
     0% {
       top: 50%; /* Start at 50% */
@@ -120,19 +104,20 @@ main section h1{
     100% {
       top: 10%; /* Move up to 10% at the end of the animation */
     }
-  }
-
+}
 
 footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    position: absolute;
+    bottom: 0;
+    left: 0;
     background-color: #03071e;
     color: #fff;
-    grid-area: footer;
     padding-top: 2vh;
     padding-left: 1vw;
 }
-
+footer #left{
+    grid-column: span 6 ;
+}
 #right a{
     text-decoration: underline;
     color:aliceblue;
@@ -140,3 +125,14 @@ footer {
     display: block;
 }
 
+
+@media (max-width: 768px){
+    header nav{
+        display: block;
+        grid-column: span 5;
+        justify-self: end;
+    }
+    footer #left{
+        grid-column: span 12;
+    }
+}
