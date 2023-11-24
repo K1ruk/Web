@@ -119,7 +119,7 @@ footer #left{
     grid-column: span 12;
     justify-self: center;
     align-self: center;
-    width: 60vw;
+    width: 80vw;
     height: 70vh;
     overflow: hidden;
     background-color: #03071e;
@@ -129,7 +129,7 @@ footer #left{
     background-color: #03071e;
     color: #edede9;
     padding: 20px;
-    padding-bottom: 14vh;
+    padding-bottom: 10vh;
     border-radius: 5px;
     width: 400px;
     height: 400px;
@@ -137,7 +137,7 @@ footer #left{
     align-self: center;
 }
 .inside-overlay article img{
-    width: 100%;
+    max-width: 100%;
     height: auto;
     user-select: none;
 }
@@ -154,6 +154,8 @@ footer #left{
     font-size: 25px;
     color: #edede9;
 }
+
+
 @media (max-width: 1024px){
     .project{
         grid-column: span 6;
@@ -162,16 +164,27 @@ footer #left{
         grid-column: span 12;
     }
 
-    .inside-overlay article img{
-        grid-column: span 12;
+    .inside-overlay i{
+        margin-top: 2vh;
+    }
+    .inside-overlay{
+        overflow: scroll;
+    }
+    .inside-overlay article{
+        object-fit: contain;
         width: 100%;
+        height: auto;
+        grid-column: 3 / span 8;
+    }
+    .inside-overlay article img {
+        max-width: 100%;
         height: auto;
         user-select: none;
     }
     .inside-overlay p{
         color: #edede9;
         margin-top: 25px;
-        grid-column: span 12;
+        grid-column: 3 / span 8;
         line-height: 1.5;
     }
 }
@@ -191,6 +204,20 @@ footer #left{
     }
     .inside{
         row-gap: 20px;
+    }
+    .inside-overlay article{
+        object-fit: contain;
+        padding-bottom: 5vh;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        grid-column: 3 / span 8;
+    }
+    .inside-overlay p{
+        color: #edede9;
+        margin-top: 25px;
+        grid-column: 3 /span 8;
+        line-height: 1.5;
     }
     .nav-menu-mobile{
         display: block;
@@ -237,4 +264,14 @@ footer #left{
 
     }
     
+}
+
+@media (max-width: 425px){
+    .inside-overlay article{
+        object-fit: contain;
+        width: 100%;
+        height: auto;
+        user-select: none;
+        grid-column: 3 / span 8;
+    }
 }
